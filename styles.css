@@ -1,0 +1,124 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.scroll-container {
+    max-height: 90vh; /* Ajustez selon vos besoins */
+    overflow-y: auto;
+    width: 100%;
+}
+
+.calendar {
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: visible; /* Assurez-vous que le contenu peut déborder */
+    margin: 20px auto; /* Centrage et espace autour du calendrier */
+    padding: 20px; /* Espace interne pour le contenu */
+}
+
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 5px; /* Coins arrondis pour correspondre au thème */
+    margin-bottom: 20px; /* Espace sous le titre */
+}
+
+.days-of-week, .days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.days-of-week div, .day {
+    width: 14.28%;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.days-of-week div {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+.day {
+    position: relative;
+    height: 100px;
+}
+
+.event {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.add-forms {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-forms h3 {
+    margin-top: 10px;
+}
+
+.add-forms label {
+    display: block;
+    margin-top: 5px;
+}
+
+.add-forms input, .add-forms select {
+    width: calc(100% - 22px); /* Ajustement pour le padding */
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-forms input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-forms input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.form {
+    flex: min-content;
+    margin-left: 10px;
+}
+
+.module {
+    flex: min-content;
+    margin-right: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: visible; /* Assurez-vous que le contenu peut déborder */
+    padding: 20px; /* Espace interne pour le contenu */
+    margin-top: 20px;
+}

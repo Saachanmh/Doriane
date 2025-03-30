@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.php" class="navbar-brand">Calendrier</a>
+</nav>
+
+
+<?php
+require '..\Doriane\Date\Mois.php';
+$month = new \App\Date\Mois($_GET['month'] ?? null, $_GET['Year'] ?? null);
+?>
+
+<h1><?= $month-toString(); ?></h1>
+
+<?= $month->getWeeks(); ?>
+
+<table>
+
+</table>
+
+</body>
+</html>
