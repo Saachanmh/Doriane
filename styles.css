@@ -122,3 +122,22 @@ body {
     padding: 20px; /* Espace interne pour le contenu */
     margin-top: 20px;
 }
+
+/* styles.css */
+#modules-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#modules-list li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    cursor: move; /* Change le curseur pour indiquer que l'élément est déplaçable */
+}
+
+#modules-list li.dragging {
+    opacity: 0.5;
+}
+
