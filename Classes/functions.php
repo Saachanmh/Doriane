@@ -1,4 +1,7 @@
 <?php
+require_once '.\BDD\db.php';
+
+
 function getEvents($year, $month, $classId = null, $moduleId = null, $trainerId = null) {
     global $pdo;
     $startDate = "$year-$month-01";

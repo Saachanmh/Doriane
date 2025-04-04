@@ -140,4 +140,56 @@ body {
 #modules-list li.dragging {
     opacity: 0.5;
 }
+/* styles.css */
+.day {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    min-height: 100px; /* Hauteur minimale pour les cases vides */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligne le contenu en haut */
+}
+
+.event {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 12px;
+    width: 100%; /* Permet aux événements de s'étendre sur toute la largeur de la case */
+    box-sizing: border-box;
+}
+
+.day.empty {
+    background-color: #f9f9f9; /* Couleur de fond pour les cases vides */
+}
+/* styles.css */
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.header nav {
+    margin-top: 10px;
+}
+
+.header .nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.header .nav-link:hover {
+    text-decoration: underline;
+}
 

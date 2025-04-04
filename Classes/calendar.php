@@ -23,7 +23,7 @@
         $timestamp = mktime(0, 0, 0, $month, $day, $year);
         $currentDate = date('Y-m-d', $timestamp);
         echo "<div class='day' id='day-$year-$month-$day' ondrop='handleDrop(event)' ondragover='handleDragOver(event)'>";
-        echo $day;
+        echo "<span class='day-number'>$day</span>"; // Ajoutez le numéro du jour
         foreach ($events as $event) {
             if (date('Y-m-d', strtotime($event['start_date'])) == $currentDate) {
                 echo "<div class='event'>{$event['title']}</div>";
@@ -33,6 +33,7 @@
     }
     ?>
 </div>
+
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
         const modulesList = document.getElementById('modules-list');

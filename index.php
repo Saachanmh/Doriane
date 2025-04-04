@@ -1,6 +1,6 @@
 <?php
-include 'db.php';
-include 'functions.php';
+include '.\BDD\_db.php';
+include '.\Classes\functions.php';
 
 $year = isset($_GET['year']) ? $_GET['year'] : date('Y');
 $month = isset($_GET['month']) ? $_GET['month'] : date('m');
@@ -25,15 +25,15 @@ $trainers = getTrainers();
 </head>
 <body>
 <div class="module">
-    <?php include 'modules.php'; ?>
+    <?php include '.\Classes\modules.php'; ?>
 </div>
 <div class="calendar">
-    <?php include 'header.php'; ?>
-    <?php include 'filters.php'; ?>
-    <?php include 'calendar.php'; ?>
+    <?php include '.\Process\header.php'; ?>
+    <?php include '.\Classes\filters.php'; ?>
+    <?php include '.\Classes\calendar.php'; ?>
 </div>
 <div class="form">
-    <?php include 'add_forms.php'; ?>
+    <?php include '.\Classes\add_forms.php'; ?>
 </div>
 </body>
 </html>
