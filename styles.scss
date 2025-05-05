@@ -1,7 +1,14 @@
+// Variables de couleur inspirées par un coucher de soleil
+$primary-color: #FFA500; // Orange
+$secondary-color: #FF4500; // Orange rougeâtre
+$accent-color: #FF69B4; // Rose
+$background-color: #FFFACD; // Jaune pâle
+$text-color: #333; // Texte foncé pour contraste
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #FFFACD;
-  color: #333;
+  background-color: $background-color;
+  color: $text-color;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -28,7 +35,7 @@ body {
 }
 
 .header {
-  background: linear-gradient(to right, #FFA500, #FF4500);
+  background: linear-gradient(to right, $primary-color, $secondary-color);
   color: white;
   padding: 15px;
   text-align: center;
@@ -53,7 +60,7 @@ body {
 .days-of-week div {
   background-color: #f1f1f1;
   font-weight: bold;
-  color: #333;
+  color: $text-color;
 }
 
 .day {
@@ -61,13 +68,14 @@ body {
   height: 100px;
   background-color: #fff;
   transition: background-color 0.3s;
-}
-.day:hover {
-  background-color: white;
+
+  &:hover {
+    background-color: lighten($background-color, 10%);
+  }
 }
 
 .event {
-  background-color: #FF69B4;
+  background-color: $accent-color;
   color: white;
   padding: 5px;
   border-radius: 5px;
@@ -87,7 +95,7 @@ body {
 
 .add-forms h3 {
   margin-top: 10px;
-  color: #FFA500;
+  color: $primary-color;
 }
 
 .add-forms label {
@@ -103,16 +111,17 @@ body {
   border-radius: 5px;
 }
 
-.add-forms input[type=submit] {
-  background-color: #FF4500;
+.add-forms input[type="submit"] {
+  background-color: $secondary-color;
   color: white;
   border: none;
   cursor: pointer;
   margin-top: 10px;
   transition: background-color 0.3s;
-}
-.add-forms input[type=submit]:hover {
-  background-color: rgb(204, 55.2, 0);
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
 }
 
 .form {
@@ -166,5 +175,3 @@ body {
 .header .nav-link:hover {
   text-decoration: underline;
 }
-
-/*# sourceMappingURL=styles.css.map */

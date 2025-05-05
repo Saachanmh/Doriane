@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendrier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+</body>
+</html>
 <div class="add-forms">
     <h2>Ajouter des éléments</h2>
 

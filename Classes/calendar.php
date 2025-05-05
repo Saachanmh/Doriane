@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendrier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+</body>
+</html>
 <div class="days-of-week">
     <div>Dim</div>
     <div>Lun</div>
