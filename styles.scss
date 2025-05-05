@@ -4,6 +4,7 @@ $secondary-color: #FF4500; // Orange rougeâtre
 $accent-color: #FF69B4; // Rose
 $background-color: #FFFACD; // Jaune pâle
 $text-color: #333; // Texte foncé pour contraste
+$module-background: #f9f9f9; // Fond pour la colonne des modules
 
 body {
   font-family: Arial, sans-serif;
@@ -17,21 +18,29 @@ body {
   padding: 20px;
 }
 
-.scroll-container {
-  max-height: 90vh;
-  overflow-y: auto;
+.container {
+  display: flex;
   width: 100%;
+  max-width: 1400px; // Largeur maximale ajustée
+  gap: 60px; // Augmentation de l'espace entre les colonnes
+  padding: 20px; // Espace interne
 }
 
-.calendar {
-  width: 80%;
-  max-width: 800px;
+.calendar, .form, .modules {
+  flex: 1;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  overflow: visible;
-  margin: 20px auto;
   padding: 20px;
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: 10px; // Ajout de marges pour plus d'espace
+}
+
+.modules {
+  background-color: $module-background; // Fond pour la colonne des modules
+  border: 1px solid #ddd; // Ajout d'une bordure pour mieux voir le fond
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Ajout d'une ombre pour plus de visibilité
 }
 
 .header {
@@ -60,7 +69,6 @@ body {
 .days-of-week div {
   background-color: #f1f1f1;
   font-weight: bold;
-  color: $text-color;
 }
 
 .day {
@@ -83,14 +91,6 @@ body {
   font-size: 12px;
   width: 100%;
   box-sizing: border-box;
-}
-
-.add-forms {
-  margin-top: 20px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .add-forms h3 {
@@ -122,56 +122,4 @@ body {
   &:hover {
     background-color: darken($secondary-color, 10%);
   }
-}
-
-.form {
-  flex: min-content;
-  margin-left: 10px;
-}
-
-.module {
-  flex: min-content;
-  margin-right: 10px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  overflow: visible;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-#modules-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-#modules-list li {
-  padding: 10px;
-  margin: 5px 0;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  cursor: move;
-}
-
-#modules-list li.dragging {
-  opacity: 0.5;
-}
-
-.day.empty {
-  background-color: #f9f9f9;
-}
-
-.header nav {
-  margin-top: 10px;
-}
-
-.header .nav-link {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 18px;
-}
-
-.header .nav-link:hover {
-  text-decoration: underline;
 }

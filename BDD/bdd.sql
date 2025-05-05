@@ -1,4 +1,4 @@
--- Création de la table des années scolaires
+
 CREATE TABLE school_years (
                               id INT AUTO_INCREMENT PRIMARY KEY,
                               name VARCHAR(255) NOT NULL,
@@ -6,7 +6,6 @@ CREATE TABLE school_years (
                               end_date DATE NOT NULL
 );
 
--- Création de la table des classes
 CREATE TABLE classes (
                          id INT AUTO_INCREMENT PRIMARY KEY,
                          name VARCHAR(255) NOT NULL,
@@ -14,7 +13,6 @@ CREATE TABLE classes (
                          FOREIGN KEY (school_year_id) REFERENCES school_years(id)
 );
 
--- Création de la table des modules
 CREATE TABLE modules (
                          id INT AUTO_INCREMENT PRIMARY KEY,
                          name VARCHAR(255) NOT NULL,
@@ -23,7 +21,6 @@ CREATE TABLE modules (
                          FOREIGN KEY (class_id) REFERENCES classes(id)
 );
 
--- Création de la table des formateurs
 CREATE TABLE trainers (
                           id INT AUTO_INCREMENT PRIMARY KEY,
                           name VARCHAR(255) NOT NULL,
@@ -31,7 +28,6 @@ CREATE TABLE trainers (
                           phone VARCHAR(20)
 );
 
--- Création de la table des événements/cours
 CREATE TABLE events (
                         id INT AUTO_INCREMENT PRIMARY KEY,
                         title VARCHAR(255) NOT NULL,
@@ -46,7 +42,6 @@ CREATE TABLE events (
                         FOREIGN KEY (class_id) REFERENCES classes(id)
 );
 
--- Création de la table des utilisateurs
 CREATE TABLE users (
                        id INT AUTO_INCREMENT PRIMARY KEY,
                        username VARCHAR(255) NOT NULL UNIQUE,
