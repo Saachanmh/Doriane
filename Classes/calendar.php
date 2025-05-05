@@ -43,9 +43,20 @@
     }
     ?>
 </div>
+<?php
+function saveEvent($newevent) {
+    return "évènement: " . $newevent;
+}
+
+if (isset($_POST['newevent'])) {
+    echo 'titi';
+    $newevent = $_POST['newevent'];
+    echo saveEvent($newevent);
+}
+?>
 
 <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
+    //document.addEventListener('DOMContentLoaded', (event) => {
         const modulesList = document.getElementById('modules-list');
         const modulesData = {}; // Objet pour stocker les noms des modules
 
@@ -82,7 +93,21 @@
             if (event.target.classList.contains('day')) {
                 const moduleId = event.dataTransfer.getData('text/plain');
                 const dayElement = event.target;
-                addEventToDay(moduleId, dayElement);
+                //addEventToDay(moduleId, dayElement);
+                fetch('save_event.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'newevent=' + encodeURIComponent(dayElement.id)
+                })
+                .then(response => response.text())
+                .then(result => {
+                    console.log(result, 'toto');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
             }
         }
 
@@ -99,6 +124,7 @@
             day.addEventListener('dragover', handleDragOver);
             day.addEventListener('drop', handleDrop);
         });
-    });
+   // });
 </script>
+
 

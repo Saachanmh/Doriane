@@ -2,18 +2,21 @@
 include '.\BDD\_db.php';
 include '.\Classes\functions.php';
 
-$year = isset($_GET['year']) ? $_GET['year'] : date('Y');
-$month = isset($_GET['month']) ? $_GET['month'] : date('m');
-$schoolYearId = isset($_GET['school_year']) ? $_GET['school_year'] : null;
-$classId = isset($_GET['class']) ? $_GET['class'] : null;
-$moduleId = isset($_GET['module']) ? $_GET['module'] : null;
-$trainerId = isset($_GET['trainer']) ? $_GET['trainer'] : null;
+$year = $_GET['year'] ?? date('Y');
+$month = $_GET['month'] ?? date('m');
+$schoolYearId = $_GET['school_year'] ?? null;
+$classId = $_GET['class'] ?? null;
+$moduleId = $_GET['module'] ?? null;
+$trainerId = $_GET['trainer'] ?? null;
 
 $events = getEvents($year, $month, $classId, $moduleId, $trainerId);
 $schoolYears = getSchoolYears();
 $classes = $schoolYearId ? getClasses($schoolYearId) : [];
 $modules = $classId ? getModules($classId) : [];
 $trainers = getTrainers();
+
+//print_r($events)
+
 ?>
 
 <!DOCTYPE html>
